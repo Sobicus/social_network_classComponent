@@ -1,0 +1,41 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    justify-items: center;
+}
+
+.dialogs_items {
+    padding: 10px;
+}
+
+.dialogs_items .active {
+    color: gold;
+}
+
+.dialog {
+    padding: 10px;
+}
+
+.dialog.active a {
+    color: gold;
+}
+
+/*this for active dialogs color gold*/
+.dialog a {
+    text-decoration: none;
+    color: white; /*this color all dialogs*/
+}
+
+.messages {
+    padding: 10px;
+}
+
+.message {
+    padding: 10px;
+    justify-self: end;
+}
+
+a img {
+    width: 50px;
+    border-radius: 25px;
+}

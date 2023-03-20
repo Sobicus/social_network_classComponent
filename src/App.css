@@ -1,0 +1,18 @@
+.App{
+   height: 100%;
+    width: 100%;
+}
+.app_wrapper {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    /*grid-gap: 10px;*/
+    grid-template-areas:'heder heder'
+    'nav content';
+}
+.app_wrapper_content{
+    grid-area: content;
+    background-color: #6590e1;
+}

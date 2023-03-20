@@ -1,0 +1,32 @@
+.paginator {
+    margin: 10px;
+}
+
+.selectedPage {
+    font-weight: bolder;
+    background: mediumspringgreen;
+    padding: 2px;
+    border: 1px solid black;
+    margin: 2px;
+    box-shadow: 5px -5px 5px mediumspringgreen;
+
+}
+
+.pageNumber {
+    background: darkseagreen;
+    padding: 2px;
+    border: 1px solid black;
+    margin: 2px;
+    box-shadow: 5px -5px 5px darkseagreen;
+}
+
+.buttonBackStyle {
+    width: 100px;
+    height: 29px;
+    border-radius: 75% 0% 0% 75%
+}
+.buttonRightStyle {
+    width: 100px;
+    height: 29px;
+    border-radius: 0% 75% 75% 0%
+}

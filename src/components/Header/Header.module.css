@@ -1,0 +1,15 @@
+.heder {
+    grid-area: heder;
+    background-color: grey;
+}
+
+.heder img {
+    width: 60px;
+    height: 60px;
+}
+.loginBlock{
+    float: right;
+}
+.loginBlock a{
+    color: aliceblue;
+}

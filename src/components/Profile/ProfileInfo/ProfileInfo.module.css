@@ -1,0 +1,17 @@
+.description_block {
+    padding: 10px;
+}
+
+.mainePhoto {
+    border-radius: 500px;
+    margin: 5px;
+    width: 100px;
+}
+.smallPhoto {
+    border-radius: 500px;
+    margin: 5px;
+    width: 50px;
+}
+.contacts{
+    padding-left: 10px;
+}

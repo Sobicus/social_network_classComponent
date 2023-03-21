@@ -1,5 +1,5 @@
 import React, {ComponentType, FC, Suspense} from 'react';
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import './App.css';
@@ -47,7 +47,7 @@ class App extends React.Component<AppType> {
                 <div className='app_wrapper_content'>
                     <Suspense>
                         <Routes>
-                            <Route path='*' element={<ProfileContainer/>}/>
+                            <Route path='/' element={<ProfileContainer/>}/>
                             <Route path='/profile/' element={<ProfileContainer/>}/>
                             <Route path='/profile/:userId' element={<ProfileContainer/>}/>
                             <Route path='/dialogs/'
@@ -57,6 +57,9 @@ class App extends React.Component<AppType> {
                             <Route path='/music' element={<Music/>}/>
                             <Route path='/settings' element={<Settings/>}/>
                             <Route path='/login' element={<Login/>}/>
+
+                            <Route path='/404' element={<h1>404: PAGE NOT FOUND</h1>}/>
+                            <Route path='*' element={<Navigate to={'/404'}/>}/>
                         </Routes>
                     </Suspense>
                 </div>

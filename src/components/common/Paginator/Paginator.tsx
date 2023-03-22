@@ -40,7 +40,7 @@ export const Paginator: React.FC<usersType> = ({
             }
 
             {pages.filter(el=>el>=leftPortionPageNumber && el<=rightPortionPageNumber).map(el => {
-                    return <span className={currentPage === el ? style.selectedPage : '' + ' ' + style.pageNumber} onClick={() => {
+                    return <span className={currentPage === el ? style.selectedPage : + ' ' + style.pageNumber} onClick={() => {
                         onPageChanged(el)
                     }}>
                             {el}

@@ -75,8 +75,8 @@ export const profileReducer = (state: profilePageType = initialState, action: ac
             // return state
             // }
         }
-        case ERROR_MESSAGE:{
-            return {...state, errorMessage:action.errorMessage}
+        case ERROR_MESSAGE: {
+            return {...state, errorMessage: action.errorMessage}
         }
         default:
             return state
@@ -130,9 +130,16 @@ export const getStatusProfileTC = (userId: number) => async (dispatch: Dispatch)
     dispatch(setStatusProfileAC(response.data))
 }
 export const updateStatusProfileTC = (status: string) => async (dispatch: Dispatch) => {
-    let response = await profileAPI.updateStatusProfile(status)
-    if (response.data.resultCode === 0) {
-        dispatch(setStatusProfileAC(status))
+    try {
+        let response = await profileAPI.updateStatusProfile(status)
+        if (response.data.resultCode === 0) {
+            dispatch(setStatusProfileAC(status))
+        }
+        if (response.data.resultCode === 1) {
+            alert("Max status length 300 symbols, need prepare error handler")
+        }
+    } catch (error) {
+        alert('Error in updateStatusProfileTC ' + error)
     }
 }
 export const setUserProfileTC = (userId: number) => async (dispatch: Dispatch) => {

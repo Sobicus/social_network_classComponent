@@ -3,27 +3,37 @@ import style from './Dialogs.module.css'
 import {DialogItem} from "./DialogItem/DialogsItem";
 import {Message} from "./Message/Message";
 import {dialogsPageType} from '../../redux/store';
+import {useSelector} from "react-redux";
+import {RootStateType, useAppDispatch, useAppSelector} from "../../redux/redux-store";
+import {sendMessageAC, updateNewMessageBodyAC} from "../../redux/dialogs-reducer";
 
 type DialogsType = {
+   /*
     updateNewMessageBody: (body: string) => void
     sendMessage: () => void
     dialogsPage: dialogsPageType
-
+*/
 }
 
 export const Dialogs: React.FC<DialogsType> = (props) => {
+    /*
     let state = props.dialogsPage
-
+    */
     let newMessageElement = React.createRef<HTMLTextAreaElement>()
+    /*
     let newMessageBody = props.dialogsPage.newMessageBody
+*/
+    let newMessageBody1 = useAppSelector(state=>state.dialogsPage.newMessageBody)
+    const dispatch = useAppDispatch()
+
 
 
     const onSendMessageClick = () => {
-        props.sendMessage()
+        sendMessageAC()
     }
     const onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         let body = e.currentTarget.value
-        props.updateNewMessageBody(body)
+        updateNewMessageBodyAC(body)
     }
 
     return (
@@ -37,7 +47,7 @@ export const Dialogs: React.FC<DialogsType> = (props) => {
                 <div>
                     <div>
                         <textarea
-                            value={newMessageBody}
+                            value={newMessageBody1}
                             ref={newMessageElement}
                             placeholder='Enter your message'
                             onChange={onNewMessageChange}

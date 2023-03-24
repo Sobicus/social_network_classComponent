@@ -3,14 +3,12 @@ import style from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
 
 export const Navbar = () => {
-    const isActiveStyle = (isActive: boolean) => isActive ? style.active : undefined
-
     return (
         <nav className={style.nav}>
             <div className={`${style.item} ${style.active}`}>
                 <NavLink to='/profile' className={({isActive}) =>
-                    isActive ? style.active : undefined
-                }>Profile</NavLink>
+                    isActive ? style.active : undefined}
+                >Profile</NavLink>
             </div>
             <div className={style.item}>
                 <NavLink to='/dialogs' className={({isActive}) =>

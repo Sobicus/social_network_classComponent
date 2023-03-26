@@ -23,17 +23,18 @@ export const Dialogs: React.FC<DialogsType> = (props) => {
     /*
     let newMessageBody = props.dialogsPage.newMessageBody
 */
-    let newMessageBody1 = useAppSelector(state=>state.dialogsPage.newMessageBody)
+    let newMessageBody = useAppSelector(state=>state.dialogsPage.newMessageBody)
+    let state = useAppSelector(state=>state.dialogsPage)
     const dispatch = useAppDispatch()
 
 
 
     const onSendMessageClick = () => {
-        sendMessageAC()
+        dispatch(sendMessageAC())
     }
     const onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         let body = e.currentTarget.value
-        updateNewMessageBodyAC(body)
+        dispatch(updateNewMessageBodyAC(body))
     }
 
     return (
@@ -47,7 +48,7 @@ export const Dialogs: React.FC<DialogsType> = (props) => {
                 <div>
                     <div>
                         <textarea
-                            value={newMessageBody1}
+                            value={newMessageBody}
                             ref={newMessageElement}
                             placeholder='Enter your message'
                             onChange={onNewMessageChange}

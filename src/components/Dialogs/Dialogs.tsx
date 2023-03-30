@@ -2,32 +2,16 @@ import React, {ChangeEvent} from "react";
 import style from './Dialogs.module.css'
 import {DialogItem} from "./DialogItem/DialogsItem";
 import {Message} from "./Message/Message";
-import {dialogsPageType} from '../../redux/store';
-import {useSelector} from "react-redux";
-import {RootStateType, useAppDispatch, useAppSelector} from "../../redux/redux-store";
+import {useAppDispatch, useAppSelector} from "../../redux/redux-store";
 import {sendMessageAC, updateNewMessageBodyAC} from "../../redux/dialogs-reducer";
 
-type DialogsType = {
-   /*
-    updateNewMessageBody: (body: string) => void
-    sendMessage: () => void
-    dialogsPage: dialogsPageType
-*/
-}
+type DialogsType = {}
 
 export const Dialogs: React.FC<DialogsType> = (props) => {
-    /*
-    let state = props.dialogsPage
-    */
     let newMessageElement = React.createRef<HTMLTextAreaElement>()
-    /*
-    let newMessageBody = props.dialogsPage.newMessageBody
-*/
     let newMessageBody = useAppSelector(state=>state.dialogsPage.newMessageBody)
     let state = useAppSelector(state=>state.dialogsPage)
     const dispatch = useAppDispatch()
-
-
 
     const onSendMessageClick = () => {
         dispatch(sendMessageAC())
@@ -36,7 +20,6 @@ export const Dialogs: React.FC<DialogsType> = (props) => {
         let body = e.currentTarget.value
         dispatch(updateNewMessageBodyAC(body))
     }
-
     return (
         <div className={style.dialogs}>
             <div className={style.dialogs_items}>
@@ -59,10 +42,7 @@ export const Dialogs: React.FC<DialogsType> = (props) => {
                         <button onClick={onSendMessageClick}>Send</button>
                     </div>
                 </div>
-
             </div>
-
-
         </div>
     )
 }

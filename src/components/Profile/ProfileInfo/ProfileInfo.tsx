@@ -41,7 +41,6 @@ export const ProfileInfo: React.FC<profileInfoType> = (props) => {
                 <img src={props.profile.photos.small} alt="Small avatar" className={style.smallPhoto}/>
                 <br/>
                 {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
-                {/*<ProfileStatus status={props.status} updateStatus={props.updateStatus}/>*/}
                 <br/>
                 3. Profile status
                 <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
@@ -81,7 +80,6 @@ const ProfileData: React.FC<ProfileDataType> = ({profile, isOwner,goToEditMode})
         </div>
     )
 }
-
 
 const Contact: React.FC<ContactType> = ({contactTitle, contactValue}) => {
     return (

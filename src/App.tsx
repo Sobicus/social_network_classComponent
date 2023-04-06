@@ -14,6 +14,7 @@ import {DialogsContainer as Foo} from './components/Dialogs/DialogsContainer';
 import {RootStateType, useAppDispatch} from "./redux/redux-store";
 import {Preloader} from "./components/common/preloader/Preloader";
 import {initializedAppTC} from './redux/app-reducer';
+import Dialogs from './components/Dialogs/Dialogs';
 
 
 const DialogsContainer = React.lazy(() => Promise.resolve(
@@ -59,7 +60,7 @@ export const App = () => {
                             <Route path='/profile/' element={<ProfileContainer/>}/>
                             <Route path='/profile/:userId' element={<ProfileContainer/>}/>
                             <Route path='/dialogs/'
-                                   element={<DialogsContainer/>}/>
+                                   element={<Dialogs/>}/>
                             <Route path='/users' element={<UsersContainer/>}/>
                             <Route path='/news' element={<News/>}/>
                             <Route path='/music' element={<Music/>}/>

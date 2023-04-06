@@ -4,10 +4,11 @@ import {DialogItem} from "./DialogItem/DialogsItem";
 import {Message} from "./Message/Message";
 import {useAppDispatch, useAppSelector} from "../../redux/redux-store";
 import {sendMessageAC, updateNewMessageBodyAC} from "../../redux/dialogs-reducer";
+import {withAuthRedirect} from "../hoc/withAuthRedirect";
 
 type DialogsType = {}
 
-export const Dialogs: React.FC<DialogsType> = (props) => {
+ const Dialogs: React.FC<DialogsType> = (props) => {
     let newMessageElement = React.createRef<HTMLTextAreaElement>()
     let newMessageBody = useAppSelector(state=>state.dialogsPage.newMessageBody)
     let state = useAppSelector(state=>state.dialogsPage)
@@ -46,3 +47,5 @@ export const Dialogs: React.FC<DialogsType> = (props) => {
         </div>
     )
 }
+
+export default withAuthRedirect(Dialogs)

@@ -2,9 +2,10 @@ import React from "react";
 import {connect} from "react-redux";
 import {compose, Dispatch} from "redux";
 import {sendMessageAC, updateNewMessageBodyAC} from '../../redux/dialogs-reducer';
-import {Dialogs} from "./Dialogs";
+import Dialogs from "./Dialogs";
 import {RootStateType} from "../../redux/redux-store";
 import {withAuthRedirect} from "../hoc/withAuthRedirect";
+
 
 let mapStateToProps = (state: RootStateType) => {
     return {
